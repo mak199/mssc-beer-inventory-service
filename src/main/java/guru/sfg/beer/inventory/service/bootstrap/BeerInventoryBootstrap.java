@@ -47,7 +47,7 @@ public class BeerInventoryBootstrap implements CommandLineRunner {
                 .quantityOnHand(50)
                 .build());
 
-        beerInventoryRepository.saveAndFlush(BeerInventory
+        beerInventoryRepository.save(BeerInventory
                 .builder()
                 .beerId(BEER_3_UUID)
                 .upc(BEER_3_UPC)
