@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
@@ -54,7 +55,7 @@ public class AllocationServiceImpl implements AllocationService {
     }
 
     private void allocateBeerOrderLine(BeerOrderLineDto beerOrderLine) {
-        List<BeerInventory> beerInventoryList = beerInventoryRepository.findAllByUpc(beerOrderLine.getUpc());
+        List<BeerInventory> beerInventoryList = beerInventoryRepository.findAllByUpc(UUID.fromString(beerOrderLine.getUpc()));
 
         beerInventoryList.forEach(beerInventory -> {
             int inventory = (beerInventory.getQuantityOnHand() == null) ? 0 : beerInventory.getQuantityOnHand();
