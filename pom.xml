@@ -17,11 +17,19 @@
 
     <description>MSSC Beer Inventory Service</description>
 
+
+    <properties>
+        <docker.image.prefix>mak1995</docker.image.prefix>
+        <docker.image.name>${project.artifactId}</docker.image.name>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
+
+
 
 </project>
